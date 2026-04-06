@@ -1,7 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronRight, Phone, Mail, MapPin, Send } from "lucide-react";
+import {
+  ChevronRight,
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  ArrowBigUpDash,
+  ArrowUpRight,
+} from "lucide-react";
+import Image from "next/image";
+import paymentMethods from "/public/assets/Footer/footerImg.png";
 
 const navLinks = ["Home", "Shop", "About", "Contact"];
 
@@ -10,7 +20,7 @@ export default function Footer() {
 
   return (
     <div className="relative w-full bg-white">
-      {/* ── Newsletter Card — floats above the footer ── */}
+      {/* newsletter */}
       <div className="relative z-10 flex justify-center px-6">
         <div
           className="relative w-full max-w-[818px] max-h-[328px] rounded-2xl overflow-hidden flex flex-col items-center text-center px-8 py-10 shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
@@ -35,7 +45,7 @@ export default function Footer() {
           </p>
 
           {/* Email Row */}
-          <div className="flex items-center w-full max-w-[300px] bg-white rounded-xl shadow-sm px-4 py-2 gap-2">
+          <div className="relative flex items-center w-full max-w-[300px] bg-white rounded-xl shadow-sm px-4 py-[14px] gap-2">
             <input
               type="email"
               placeholder="Email"
@@ -43,16 +53,15 @@ export default function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-transparent outline-none text-[13px] text-[#333] placeholder:text-[#bbb] "
             />
-            <button className="bg-green-500 hover:bg-green-600 transition-colors rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0">
-              <Send size={13} color="white" strokeWidth={2} />
+            <button className="absolute -right-[50px] bg-[#28A745] hover:bg-green-600 transition-colors rounded-lg size-[44px] flex items-center justify-center flex-shrink-0">
+              <ArrowUpRight size={13} color="white" strokeWidth={2} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* ── Dark Footer — pulls up behind the card ── */}
       <footer className="w-full bg-[#101A12] -mt-16 pt-28 h-[350px] mx-auto">
-        {/* ── Logo ── */}
+        {/* logo*/}
         <div className="flex flex-col items-center gap-1">
           <span
             className="text-white font-bold tracking-wide"
@@ -62,7 +71,7 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* ── Nav Links ── */}
+        {/* navlinks */}
         <nav className="flex items-center justify-center gap-7 mt-5">
           {navLinks.map((link, i) => (
             <a
@@ -79,10 +88,9 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* ── Divider ── */}
         <div className="w-full border-t border-[#2e3d2c] mt-7" />
 
-        {/* ── Contact Row ── */}
+        {/* Contact Row */}
         <div className="flex flex-wrap items-center justify-center gap-8 py-4 text-[12px] text-white">
           <span className="flex items-center gap-1.5">
             <Phone size={13} strokeWidth={1.8} />
@@ -98,10 +106,9 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* ── Divider ── */}
         <div className="w-full border-t border-[#2e3d2c]" />
 
-        {/* ── Bottom Bar ── */}
+        {/*bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between px-6 py-3 gap-2 text-[11px] text-white">
           <span>©2025 Fresh Farmers All Rights Reserved</span>
           <div className="flex items-center gap-5">
@@ -118,6 +125,15 @@ export default function Footer() {
               Terms &amp; Conditions <ChevronRight size={11} />
             </a>
           </div>
+        </div>
+
+        <div className="w-full border-t border-[#2e3d2c]" />
+        <div className="w-full px-4 py-3 flex justify-center items-center my-10">
+          <Image
+            src={paymentMethods}
+            alt="Accepted payment methods"
+            className="w-full max-w-full h-auto object-contain opacity-90"
+          />
         </div>
       </footer>
     </div>

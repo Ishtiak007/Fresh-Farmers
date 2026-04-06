@@ -34,7 +34,7 @@
     "simplex-noise": "^4.0.1",
     "sonner": "^2.0.7",
     "sweetalert2": "^11.19.1",
-    "swiper": "^11.2.6",
+    "swiper": "^11.2.10",
     "tailwind-merge": "^2.6.0",
     "uuid": "^11.1.0",
     "zod": "^3.25.76"

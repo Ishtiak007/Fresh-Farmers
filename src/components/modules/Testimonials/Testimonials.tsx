@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef } from "react";
 import { Play } from "lucide-react";
 
@@ -12,6 +11,7 @@ const testimonials = [
       '"Very clean packaging and super fresh meat. Delivery was on time. Highly recommended!"',
     video: "/assets/TestimonilasVideos/video.mp4",
     poster: "/assets/TestimonilasVideos/image.png",
+    hideTextOnHover: true,
   },
   {
     id: 2,
@@ -21,6 +21,7 @@ const testimonials = [
       '"Taste and quality is far better than local market. Definitely ordering again."',
     video: "/assets/TestimonilasVideos/video2.mp4",
     poster: "/assets/TestimonilasVideos/image2.png",
+    hideTextOnHover: true,
   },
   {
     id: 3,
@@ -29,18 +30,26 @@ const testimonials = [
     quote: '"Loved the marinated options. Saved my cooking time!"',
     video: "/assets/TestimonilasVideos/video3.mp4",
     poster: "/assets/TestimonilasVideos/image3.png",
+    hideTextOnHover: true,
   },
 ];
 
 function TestimonialCard({ item }: { item: (typeof testimonials)[0] }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
     videoRef.current?.play();
+    if (item.hideTextOnHover && textRef.current) {
+      textRef.current.style.opacity = "0";
+    }
   };
 
   const handleMouseLeave = () => {
     videoRef.current?.pause();
+    if (item.hideTextOnHover && textRef.current) {
+      textRef.current.style.opacity = "1";
+    }
   };
 
   return (
@@ -50,7 +59,7 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[0] }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Video background  */}
+      {/* Video background */}
       <video
         ref={videoRef}
         src={item.video}
@@ -83,9 +92,13 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[0] }) {
         </div>
       </div>
 
-      {/* ── Text overlay — bottom of card ── */}
-      <div className="absolute bottom-0 left-0 right-0 px-5 py-5 flex flex-col gap-3 z-10">
-        <p className="text-[18px] text-white m-0 ">{item.quote}</p>
+      {/* Text overlay — bottom of card */}
+      <div
+        ref={textRef}
+        className="absolute bottom-0 left-0 right-0 px-5 py-5 flex flex-col gap-3 z-10"
+        style={{ transition: "opacity 0.3s ease" }}
+      >
+        <p className="text-[18px] text-white m-0">{item.quote}</p>
         <div>
           <p className="text-[18px] font-semibold text-white m-0 font-sans">
             {item.name}

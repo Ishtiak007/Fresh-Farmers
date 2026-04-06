@@ -90,10 +90,15 @@ export default function CustomerFavorites() {
                 </span>
               )}
 
-              {/* Image Area — centered horizontally & vertically */}
+              {/* Image Area */}
               <div
-                className="relative w-full flex-1 flex items-center justify-center"
-                style={{ backgroundColor: product.bgColor, minHeight: "300px" }}
+                className={`relative w-full flex-1 flex items-center justify-center min-h-[300px] ${
+                  product.bgColor === "#FDF7EC"
+                    ? "bg-[#FDF7EC]"
+                    : product.bgColor === "#FFF2F4"
+                      ? "bg-[#FFF2F4]"
+                      : "bg-[#E9FFF3]"
+                }`}
               >
                 <div className="relative w-[350px] h-[250px]">
                   <Image
@@ -105,9 +110,9 @@ export default function CustomerFavorites() {
                 </div>
               </div>
 
-              {/* Info Area — compact bar at the bottom */}
+              {/* Info Area */}
               <div className="w-full px-4 py-3 flex items-center justify-between bg-white flex-shrink-0 rounded-xl">
-                {/* Left: name + price row */}
+                {/* Left side content */}
                 <div className="flex flex-col gap-0.5">
                   <p className="text-[20px] font-medium text-[#101A12] m-0">
                     {product.name}
@@ -127,8 +132,8 @@ export default function CustomerFavorites() {
                   </div>
                 </div>
 
-                {/* Cart Button — lucide-react ShoppingCart icon */}
-                <button className="bg-green-500 hover:bg-green-600 border-none rounded-[12px] w-[34px] h-[34px] flex items-center justify-center cursor-pointer text-white flex-shrink-0 transition-colors">
+                {/* Right Cart Button */}
+                <button className="bg-[#28A745] hover:bg-green-600 border-none rounded-[12px] w-[34px] h-[34px] flex items-center justify-center cursor-pointer text-white flex-shrink-0 transition-colors">
                   <ShoppingCart size={16} strokeWidth={2} />
                 </button>
               </div>

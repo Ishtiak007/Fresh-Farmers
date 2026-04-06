@@ -14,46 +14,27 @@ export default function HeroBanner() {
         }
       `}</style>
 
-      {/* Outer wrapper — gives room for card overflow at bottom */}
-      <div className="relative w-full" style={{ marginBottom: "100px" }}>
-        {/* ═══════════════════════════════════════════════
-            BANNER
-        ═══════════════════════════════════════════════ */}
-        <section
-          className="relative w-full overflow-hidden"
-          style={{
-            height: "690px",
-            background:
-              "linear-gradient(105deg, #091f0c 0%, #0d2e11 20%, #10391a 40%, #165e25 65%, #1d7830 85%, #227d34 100%)",
-          }}
-        >
-          {/* right-side brightness boost */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(ellipse at 78% 40%, rgba(45,160,60,0.30) 0%, transparent 55%)",
-            }}
-          />
+      <div className="relative w-full mb-16 sm:mb-20 md:mb-[100px]">
+        {/* Banner */}
+        <section className="relative w-full overflow-hidden h-[480px] sm:h-[560px] md:h-[620px] lg:h-[690px] bg-[linear-gradient(105deg,#091f0c_0%,#0d2e11_20%,#10391a_40%,#165e25_65%,#1d7830_85%,#227d34_100%)]">
+          {/* Right-side radial glow */}
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_78%_40%,rgba(45,160,60,0.30)_0%,transparent_55%)]" />
 
-          {/* ─── CONTENT AREA (max 1200px centred) ─── */}
-          <div
-            className="relative h-full mx-auto"
-            style={{ maxWidth: "1440px", padding: "0 56px" }}
-          >
-            {/* ── HEADLINE ── top-left */}
+          {/* Content area */}
+          <div className="relative h-full mx-auto max-w-[1440px] px-5 sm:px-8 md:px-10 lg:px-[56px]">
+            {/* Top left heading */}
             <h1
-              className="absolute text-white m-0 p-0"
+              className="absolute text-white m-0 p-0
+                top-8 left-5
+                sm:top-10 sm:left-8
+                md:top-12 md:left-10
+                lg:top-[56px] lg:left-[56px]
+                text-[26px] sm:text-[32px] md:text-[36px] lg:text-[40px]
+                font-medium leading-[1.08] tracking-[-1px] lg:tracking-[-1.5px]
+                max-w-[260px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[480px]"
               style={{
-                top: "56px",
-                left: "56px",
-                fontSize: "40px",
-                fontWeight: 500,
-                lineHeight: 1.08,
-                letterSpacing: "-1.5px",
                 fontFamily:
                   "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
-                maxWidth: "480px",
               }}
             >
               Pure Farm Chicken,
@@ -61,136 +42,66 @@ export default function HeroBanner() {
               Delivered Fresh
             </h1>
 
-            {/* ── SUBTITLE ── */}
+            {/* Subtitle */}
             <p
-              className="absolute m-0"
-              style={{
-                top: "180px",
-                left: "56px",
-                fontSize: "14px",
-                lineHeight: 1.65,
-                color: "rgba(255,255,255,0.50)",
-                maxWidth: "340px",
-              }}
+              className="absolute m-0
+              top-[130px] left-5
+              sm:top-[155px] sm:left-8
+              md:top-[165px] md:left-10
+              lg:top-[180px] lg:left-[56px]
+              text-[12px] sm:text-[13px] lg:text-[14px]
+              leading-[1.65] text-white/50
+              max-w-[240px] sm:max-w-[300px] lg:max-w-[340px]"
             >
               Premium quality chicken from trusted farms. No middlemen,
               <br />
               no compromise just fresh and safe meat.
             </p>
 
-            {/* ── LABEL 1: 100% Halal Certified ── */}
+            {/* Label 1: 100% Halal Certified — hidden on mobile */}
             <div
-              className="absolute flex items-center"
-              style={{ top: "306px", right: "29%", zIndex: 20 }}
+              className="hidden sm:absolute sm:flex items-center
+              sm:top-[260px] sm:right-[28%]
+              md:top-[280px] md:right-[29%]
+              lg:top-[306px] lg:right-[29%]
+              z-20 gap-2"
             >
-              {/* Icon circle */}
-              <div
-                className="flex items-center justify-center flex-shrink-0"
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "50%",
-                  background: "rgba(251,191,36,0.20)",
-                  border: "1.5px solid #FBBF24",
-                }}
-              >
-                <div
-                  style={{
-                    width: "11px",
-                    height: "11px",
-                    borderRadius: "50%",
-                    background: "#F59E0B",
-                  }}
-                />
+              <div className="flex items-center justify-center flex-shrink-0 w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] rounded-full bg-[rgba(251,191,36,0.20)] border-[1.5px] border-[#FBBF24]">
+                <div className="w-[9px] h-[9px] sm:w-[11px] sm:h-[11px] rounded-full bg-[#F59E0B]" />
               </div>
-              {/* Text */}
-              <span
-                className="text-white font-medium whitespace-nowrap"
-                style={{ fontSize: "13px" }}
-              >
+              <span className="text-white font-medium whitespace-nowrap text-[11px] sm:text-[13px]">
                 100% Halal Certified
               </span>
-              {/* Line */}
-              <div
-                style={{
-                  width: "90px",
-                  height: "1px",
-                  background: "rgba(255,255,255,0.28)",
-                }}
-              />
-              {/* End dot */}
-              <div
-                style={{
-                  width: "7px",
-                  height: "7px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.45)",
-                  flexShrink: 0,
-                }}
-              />
+              <div className="w-[60px] sm:w-[90px] h-px bg-white/[0.28]" />
+              <div className="w-[7px] h-[7px] rounded-full bg-white/45 flex-shrink-0" />
             </div>
 
-            {/* ── LABEL 2: Antibiotic-Free Feed ── */}
+            {/* Label 2: Antibiotic-Free Feed — hidden on mobile */}
             <div
-              className="absolute flex items-center"
-              style={{ top: "376px", right: "31%" }}
+              className="hidden sm:absolute sm:flex items-center
+              sm:top-[310px] sm:right-[30%]
+              md:top-[340px] md:right-[31%]
+              lg:top-[376px] lg:right-[31%]
+              gap-2"
             >
-              {/* Icon circle */}
-              <div
-                className="flex items-center justify-center flex-shrink-0"
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "50%",
-                  background: "rgba(248,113,113,0.20)",
-                  border: "1.5px solid #F87171",
-                }}
-              >
-                <div
-                  style={{
-                    width: "11px",
-                    height: "11px",
-                    borderRadius: "50%",
-                    background: "#EF4444",
-                  }}
-                />
+              <div className="flex items-center justify-center flex-shrink-0 w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] rounded-full bg-[rgba(248,113,113,0.20)] border-[1.5px] border-[#F87171]">
+                <div className="w-[9px] h-[9px] sm:w-[11px] sm:h-[11px] rounded-full bg-[#EF4444]" />
               </div>
-              {/* Text */}
-              <span
-                className="text-white font-medium whitespace-nowrap"
-                style={{ fontSize: "13px" }}
-              >
+              <span className="text-white font-medium whitespace-nowrap text-[11px] sm:text-[13px]">
                 Antibiotic-Free Feed
               </span>
-              {/* Line */}
-              <div
-                style={{
-                  width: "90px",
-                  height: "1px",
-                  background: "rgba(255,255,255,0.28)",
-                }}
-              />
-              {/* End dot */}
-              <div
-                style={{
-                  width: "7px",
-                  height: "7px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.45)",
-                  flexShrink: 0,
-                }}
-              />
+              <div className="w-[60px] sm:w-[90px] h-px bg-white/[0.28]" />
+              <div className="w-[7px] h-[7px] rounded-full bg-white/45 flex-shrink-0" />
             </div>
 
-            {/* ── CHICKEN IMAGE — top-right ── */}
+            {/* Top right chicken image */}
             <div
-              className="absolute"
-              style={{
-                top: "-30px",
-                right: "-56px",
-                width: "600px",
-                height: "680px",
-              }}
+              className="absolute
+              top-[-10px] right-[-16px]
+              w-[220px] h-[340px]
+              sm:top-[-20px] sm:right-[-24px] sm:w-[340px] sm:h-[480px]
+              md:top-[-24px] md:right-[-36px] md:w-[460px] md:h-[580px]
+              lg:top-[-30px] lg:right-[-56px] lg:w-[600px] lg:h-[680px]"
             >
               <Image
                 src="/assets/Banner/rightBanner.png"
@@ -200,27 +111,16 @@ export default function HeroBanner() {
                 priority
               />
 
-              {/* ── ROTATING BADGE — inside image container, right side ── */}
+              {/* Rotating badge — hidden on mobile */}
               <div
-                className="absolute flex items-center justify-center"
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  borderRadius: "50%",
-                  right: "18%",
-                  top: "80%",
-                  transform: "translateY(-10%)",
-                  background: "rgba(10, 38, 15, 0.82)",
-                  border: "1.5px solid rgba(255,255,255,0.20)",
-                  backdropFilter: "blur(8px)",
-                  WebkitBackdropFilter: "blur(8px)",
-                }}
+                className="hidden sm:absolute sm:flex items-center justify-center
+                w-[100px] h-[100px] md:w-[130px] md:h-[130px] lg:w-[150px] lg:h-[150px]
+                rounded-full right-[14%] top-[78%] -translate-y-[10%]
+                bg-[rgba(10,38,15,0.82)] border-[1.5px] border-white/20 backdrop-blur-[8px]"
               >
-                {/* Spinning SVG text ring */}
                 <svg
-                  className="absolute inset-0 w-full h-full"
+                  className="absolute inset-0 w-full h-full [animation:badgeSpin_12s_linear_infinite]"
                   viewBox="0 0 92 92"
-                  style={{ animation: "badgeSpin 12s linear infinite" }}
                 >
                   <defs>
                     <path
@@ -237,41 +137,33 @@ export default function HeroBanner() {
                     </textPath>
                   </text>
                 </svg>
-                {/* Center icon */}
-                <ShoppingBag size={24} color="white" strokeWidth={1.5} />
+                <ShoppingBag size={20} color="white" strokeWidth={1.5} />
               </div>
             </div>
           </div>
-          {/* end content area */}
         </section>
 
-        {/* ═══════════════════════════════════════════════
-            PRODUCT CARD + HAPPY CUSTOMERS ROW
-            Card starts at top:285px, height 316px → bottom edge at 601px
-            Happy customers aligned to card bottom strip
-        ═══════════════════════════════════════════════ */}
+        {/* Product card + happy customers */}
+        {/* Mobile: stacked below banner; md+: absolute overlap */}
         <div
-          className="absolute z-20 flex items-end"
-          style={{ top: "45%", left: "15%", gap: "32px" }}
+          className="
+          flex flex-col items-center gap-6 px-5 pt-6
+          sm:flex-row sm:items-end sm:px-8 sm:pt-8
+          md:absolute md:z-20 md:flex-row md:items-end
+          md:top-[42%] md:left-[8%] md:gap-6 md:px-0 md:pt-0
+          lg:top-[45%] lg:left-[15%] lg:gap-[32px]"
         >
-          {/* ── Product Card ── */}
+          {/* Product Card */}
           <div
-            className="relative overflow-hidden flex-shrink-0"
-            style={{
-              width: "333px",
-              height: "396px",
-              borderRadius: "20px",
-              boxShadow: "0 16px 48px rgba(0,0,0,0.55)",
-            }}
+            className="relative overflow-hidden flex-shrink-0
+            w-full max-w-[333px] h-[320px]
+            sm:w-[280px] sm:h-[350px]
+            md:w-[300px] md:h-[370px]
+            lg:w-[333px] lg:h-[396px]
+            rounded-[20px] shadow-[0_16px_48px_rgba(0,0,0,0.55)]"
           >
             {/* Dark green gradient bg */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(170deg, #0d2e10 0%, #0a2010 50%, #0f2e12 100%)",
-              }}
-            />
+            <div className="absolute inset-0 bg-[linear-gradient(170deg,#0d2e10_0%,#0a2010_50%,#0f2e12_100%)]" />
             {/* Product photo */}
             <Image
               src="/assets/Banner/leftbanner.png"
@@ -280,57 +172,28 @@ export default function HeroBanner() {
               className="object-cover"
             />
             {/* White bottom info strip */}
-            <div
-              className="absolute bottom-0 left-0 right-0 bg-white flex items-center justify-between"
-              style={{ padding: "10px 14px 12px 14px" }}
-            >
+            <div className="absolute bottom-0 left-0 right-0 bg-white flex items-center justify-between px-[14px] pt-[10px] pb-[12px]">
               <div>
-                <p
-                  className="font-semibold text-[#1a1a1a] m-0"
-                  style={{ fontSize: "13px", lineHeight: 1.3 }}
-                >
+                <p className="font-semibold text-[#1a1a1a] m-0 text-[13px] leading-[1.3]">
                   Broiler Whole Chicken
                 </p>
-                <div
-                  className="flex items-center"
-                  style={{ marginTop: "4px", gap: "8px" }}
-                >
-                  <span
-                    className="font-bold text-[#111]"
-                    style={{ fontSize: "14px" }}
-                  >
+                <div className="flex items-center mt-1 gap-2">
+                  <span className="font-bold text-[#111] text-[14px]">
                     ৳ 310
                   </span>
-                  <span
-                    className="font-semibold text-green-500"
-                    style={{ fontSize: "12px" }}
-                  >
+                  <span className="font-semibold text-green-500 text-[12px]">
                     500g
                   </span>
                 </div>
               </div>
-              <button
-                className="flex items-center justify-center text-white flex-shrink-0"
-                style={{
-                  width: "34px",
-                  height: "34px",
-                  borderRadius: "10px",
-                  background: "#22c55e",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
+              <button className="flex items-center justify-center text-white flex-shrink-0 w-[34px] h-[34px] rounded-[10px] bg-green-500 border-none cursor-pointer">
                 <ShoppingCart size={15} strokeWidth={2} />
               </button>
             </div>
           </div>
 
-          {/* ── Happy Customers — aligned to card bottom strip ── */}
-          {/* mb aligns it so bottom of this block = bottom of card */}
-          <div
-            className="flex items-center flex-shrink-0"
-            style={{ gap: "14px", marginBottom: "18px" }}
-          >
+          {/* Happy customers */}
+          <div className="flex items-center flex-shrink-0 gap-[14px] md:mb-[18px]">
             {/* Avatar stack */}
             <div className="flex">
               {[
@@ -340,15 +203,7 @@ export default function HeroBanner() {
               ].map((src, i) => (
                 <div
                   key={i}
-                  className="relative bg-gray-400 overflow-hidden"
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "50%",
-                    border: "2.5px solid rgba(255,255,255,0.85)",
-                    marginLeft: i === 0 ? 0 : "-12px",
-                    flexShrink: 0,
-                  }}
+                  className={`relative bg-gray-400 overflow-hidden w-[44px] h-[44px] rounded-full border-[2.5px] border-white/85 flex-shrink-0 ${i !== 0 ? "-ml-3" : ""}`}
                 >
                   <Image
                     src={src}
@@ -361,23 +216,12 @@ export default function HeroBanner() {
             </div>
             {/* Text */}
             <div>
-              <p
-                className="text-white font-semibold m-0"
-                style={{ fontSize: "14px", lineHeight: 1.3 }}
-              >
+              <p className="text-white font-semibold m-0 text-[14px] leading-[1.3] md:text-white">
                 Our Happy Customer
               </p>
-              <div
-                className="flex items-center"
-                style={{ marginTop: "4px", gap: "5px" }}
-              >
+              <div className="flex items-center mt-1 gap-[5px]">
                 <Star size={12} fill="#FBBF24" color="#FBBF24" />
-                <span
-                  style={{
-                    fontSize: "12px",
-                    color: "rgba(255,255,255,0.65)",
-                  }}
-                >
+                <span className="text-[12px] text-white/65">
                   4.5 (13.5k Review)
                 </span>
               </div>
@@ -385,7 +229,6 @@ export default function HeroBanner() {
           </div>
         </div>
       </div>
-      {/* end outer wrapper */}
     </>
   );
 }
