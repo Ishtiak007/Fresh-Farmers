@@ -76,7 +76,7 @@ export default function BestDeals() {
   const prev = () => setCurrent((c) => Math.max(c - 1, 0));
   const next = () => setCurrent((c) => Math.min(c + 1, maxIndex));
 
-  // dot count = maxIndex + 1
+  // dot count
   const totalDots = maxIndex + 1;
 
   return (
