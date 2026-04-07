@@ -105,7 +105,7 @@ export default function HeroBanner() {
             >
               <Image
                 src="/assets/Banner/rightBanner.png"
-                alt="Fresh Farm Chicken"
+                alt="Fresh Farm Chicken Image"
                 fill
                 className="object-contain object-top"
                 priority
